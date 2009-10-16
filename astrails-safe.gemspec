@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{astrails-safe}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Astrails Ltd.", "Mark Mansour"]
+  s.authors = ["Astrails Ltd.", "Mark Mansour", "Felipe Coury"]
   s.date = %q{2009-10-09}
   s.default_executable = %q{astrails-safe}
-  s.description = %q{Simple tool to backup databases (MySQL and PostgreSQL) and filesystem locally or to Amazon S3 (with optional encryption)}
+  s.description = %q{Simple tool to backup databases (MySQL, PostgreSQL and MongoDB) and filesystem locally or to Amazon S3 (with optional encryption)}
   s.email = %q{we@astrails.com}
   s.executables = ["astrails-safe"]
   s.extra_rdoc_files = [
@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Backup filesystem and databases (MySQL and PostgreSQL) to Amazon S3 (with encryption)}
+  s.summary = %q{Backup filesystem and databases (MySQL, PostgreSQL and MongoDB) to Amazon S3 (with encryption)}
   s.test_files = [
     "examples/example_helper.rb",
      "examples/integration/archive_integration_example.rb",

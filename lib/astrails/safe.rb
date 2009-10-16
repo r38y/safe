@@ -18,6 +18,7 @@ require 'astrails/safe/backup'
 require 'astrails/safe/backup'
 
 require 'astrails/safe/source'
+require 'astrails/safe/mongodb_dump'
 require 'astrails/safe/mysqldump'
 require 'astrails/safe/pgdump'
 require 'astrails/safe/archive'
@@ -41,10 +42,11 @@ module Astrails
       #config.dump
 
 
-      [[Mysqldump, [:mysqldump, :databases]],
-       [Pgdump,    [:pgdump,    :databases]],
-       [Archive,   [:tar,       :archives]],
-       [Svndump,   [:svndump,   :repos]]
+      [[Mysqldump,   [:mysqldump,    :databases]],
+       [MongodbDump, [:mongodb_dump, :databases]],
+       [Pgdump,      [:pgdump,       :databases]],
+       [Archive,     [:tar,          :archives]],
+       [Svndump,     [:svndump,      :repos]]
       ].each do |klass, path|
         if collection = config[*path]
           collection.each do |name, config|
