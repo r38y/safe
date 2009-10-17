@@ -1,7 +1,7 @@
 module Astrails
   module Safe
     class Backup
-      attr_accessor :id, :kind, :filename, :extension, :command, :compressed, :timestamp, :path
+      attr_accessor :id, :kind, :filename, :extension, :command, :compressed, :timestamp, :path, :processed, :multi
       def initialize(opts = {})
         opts.each do |k, v|
           self.send("#{k}=", v)

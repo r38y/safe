@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
      "lib/astrails/safe/gzip.rb",
      "lib/astrails/safe/local.rb",
      "lib/astrails/safe/mysqldump.rb",
+     "lib/astrails/safe/mongodb_dump.rb",
      "lib/astrails/safe/pgdump.rb",
      "lib/astrails/safe/pipe.rb",
      "lib/astrails/safe/s3.rb",

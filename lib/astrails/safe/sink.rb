@@ -10,6 +10,10 @@ module Astrails
       end
 
       protected
+      
+      def v(s)
+        puts s if $_VERBOSE
+      end
 
       # path is defined in subclass
       def base
