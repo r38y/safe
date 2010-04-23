@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Astrails Ltd."]
   s.date = %q{2010-02-17}
   s.default_executable = %q{astrails-safe}
-  s.description = %q{Astrails-Safe is a simple tool to backup databases (MySQL and PostgreSQL), Subversion repositories (with svndump) and just files.
+  s.description = %q{Astrails-Safe is a simple tool to backup databases (MySQL and PostgreSQL and MongoDB), Subversion repositories (with svndump) and just files.
 Backups can be stored locally or remotely and can be enctypted.
 Remote storage is supported on Amazon S3, Rackspace Cloud Files, or just plain SFTP.
 }
@@ -37,6 +37,7 @@ Remote storage is supported on Amazon S3, Rackspace Cloud Files, or just plain S
      "lib/astrails/safe/gzip.rb",
      "lib/astrails/safe/local.rb",
      "lib/astrails/safe/mysqldump.rb",
+     "lib/astrails/safe/mongodb_dump.rb",
      "lib/astrails/safe/pgdump.rb",
      "lib/astrails/safe/pipe.rb",
      "lib/astrails/safe/s3.rb",
@@ -67,7 +68,7 @@ Remote storage is supported on Amazon S3, Rackspace Cloud Files, or just plain S
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Backup filesystem and databases (MySQL and PostgreSQL) locally or to a remote server/service (with encryption)}
+  s.summary = %q{Backup filesystem and databases (MySQL and PostgreSQL and MongoDB) locally or to a remote server/service (with encryption)}
   s.test_files = [
     "spec/integration/archive_integration_spec.rb",
      "spec/integration/cleanup_spec.rb",

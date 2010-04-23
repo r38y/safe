@@ -19,6 +19,7 @@ require 'astrails/safe/backup'
 require 'astrails/safe/backup'
 
 require 'astrails/safe/source'
+require 'astrails/safe/mongodbdump'
 require 'astrails/safe/mysqldump'
 require 'astrails/safe/pgdump'
 require 'astrails/safe/archive'
@@ -30,6 +31,7 @@ require 'astrails/safe/gzip'
 
 require 'astrails/safe/sink'
 require 'astrails/safe/local'
+require 'astrails/safe/multi'
 require 'astrails/safe/s3'
 require 'astrails/safe/cloudfiles'
 require 'astrails/safe/sftp'
@@ -41,12 +43,12 @@ module Astrails
     def safe(&block)
       config = Config::Node.new(&block)
       #config.dump
-
-
-      [[Mysqldump, [:mysqldump, :databases]],
-       [Pgdump,    [:pgdump,    :databases]],
-       [Archive,   [:tar,       :archives]],
-       [Svndump,   [:svndump,   :repos]]
+      
+      [[Mysqldump,   [:mysqldump,   :databases]],
+       [Mongodbdump, [:mongodbdump, :databases]],
+       [Pgdump,      [:pgdump,      :databases]],
+       [Archive,     [:tar,         :archives]],
+       [Svndump,     [:svndump,     :repos]]
       ].each do |klass, path|
         if collection = config[*path]
           collection.each do |name, config|
